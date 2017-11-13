@@ -99,6 +99,7 @@ public class PedidoSpecificBeanImplementation extends TableGenericBeanImplementa
         strColumns += "id,";
         strColumns += "fecha,";
         strColumns += "iva,";
+        strColumns += "tiene_iva,";
         strColumns += "id_usuario";
         return strColumns;
     }
@@ -109,6 +110,7 @@ public class PedidoSpecificBeanImplementation extends TableGenericBeanImplementa
         strColumns += id + ",";
         strColumns += EncodingUtilHelper.stringifyAndQuotate(fecha) + ",";
         strColumns += iva + ",";
+        strColumns += tiene_iva + ",";
         strColumns += id_usuario;
         return strColumns;
     }
@@ -118,6 +120,7 @@ public class PedidoSpecificBeanImplementation extends TableGenericBeanImplementa
         String strPairs = "";
         strPairs += "fecha=" + EncodingUtilHelper.stringifyAndQuotate(fecha) + ",";
         strPairs += "iva=" + iva + ",";
+        strPairs += "tiene_iva" + tiene_iva + ",";
         strPairs += "id_usuario=" + id_usuario;
         return strPairs;
     }
