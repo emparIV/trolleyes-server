@@ -106,6 +106,12 @@ public class MappingServiceHelper {
                     case "getcount":
                         oReplyBean = oTipousuarioService.getCount();
                         break;
+                    case "getpagex":
+                        oReplyBean = oTipousuarioService.getPageX();
+                        break;
+                    case "getcountx":
+                        oReplyBean = oTipousuarioService.getCountX();
+                        break;
                     default:
                         oReplyBean = new ReplyBean(500, EncodingUtilHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
@@ -128,6 +134,12 @@ public class MappingServiceHelper {
                         break;
                     case "getcount":
                         oReplyBean = oProductoService.getCount();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oProductoService.getPageX();
+                        break;
+                    case "getcountx":
+                        oReplyBean = oProductoService.getCountX();
                         break;
                     default:
                         oReplyBean = new ReplyBean(500, EncodingUtilHelper.quotate("Operation not found : Please contact your administrator"));
@@ -152,6 +164,12 @@ public class MappingServiceHelper {
                     case "getcount":
                         oReplyBean = oPedidoService.getCount();
                         break;
+                    case "getpagex":
+                        oReplyBean = oPedidoService.getPageX();
+                        break;
+                    case "getcountx":
+                        oReplyBean = oPedidoService.getCountX();
+                        break;
                     default:
                         oReplyBean = new ReplyBean(500, EncodingUtilHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
@@ -174,6 +192,12 @@ public class MappingServiceHelper {
                         break;
                     case "getcount":
                         oReplyBean = oLineapedidoService.getCount();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oLineapedidoService.getPageX();
+                        break;
+                    case "getcountx":
+                        oReplyBean = oLineapedidoService.getCountX();
                         break;
                     default:
                         oReplyBean = new ReplyBean(500, EncodingUtilHelper.quotate("Operation not found : Please contact your administrator"));

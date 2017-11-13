@@ -109,7 +109,7 @@ public abstract class ViewGenericDaoImplementation implements ViewDaoInterface<V
 
     @Override
     public ArrayList<ViewGenericBeanImplementation> getPageX(int id_foreign, String ob_foreign, int intRegsPerPag, int intPage, LinkedHashMap<String, String> hmOrder, ArrayList<FilterBeanHelper> alFilter, int expand) throws Exception {
-        String strSQL1 = strSQL;
+         String strSQL1 = strSQL;
         strSQL1 += " and id_" + ob_foreign + "=" + id_foreign + " ";
         strSQL1 += SqlBuilderHelper.buildSqlFilter(alFilter);
         strSQL1 += SqlBuilderHelper.buildSqlOrder(hmOrder);
@@ -145,7 +145,8 @@ public abstract class ViewGenericDaoImplementation implements ViewDaoInterface<V
         PreparedStatement oPreparedStatement = null;
         ResultSet oResultSet = null;
         strSQL = "SELECT COUNT(*) FROM " + ob;
-        strSQL += " WHERE id_tipousuario=" + id_foreign;
+        strSQL += " WHERE 1=1 ";
+        strSQL += " and id_" + ob_foreign + "=" + id_foreign + " ";
         strSQL += SqlBuilderHelper.buildSqlFilter(alFilter);
         Long iResult = 0L;
         try {
