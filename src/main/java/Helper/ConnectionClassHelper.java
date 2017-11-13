@@ -43,7 +43,7 @@ public class ConnectionClassHelper {
     }
 
     public static String getDatabasePort() {
-        return "3306";
+        return "3307";
     }
 
     public static String getDatabaseIP() {
