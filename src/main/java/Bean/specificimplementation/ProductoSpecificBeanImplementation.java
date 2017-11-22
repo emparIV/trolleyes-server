@@ -76,40 +76,6 @@ public class ProductoSpecificBeanImplementation extends TableGenericBeanImplemen
     }
 
     @Override
-    public String getColumns() {
-        String strColumns = "";
-        strColumns += "id,";
-        strColumns += "codigo,";
-        strColumns += "descripcion";
-        strColumns += "existencias,";
-        strColumns += "precio,";
-        return strColumns;
-    }
-
-    @Override
-    public String getValues() {
-        String strColumns = "";
-        strColumns += id + ",";
-        strColumns += EncodingUtilHelper.quotate(codigo) + ",";
-        strColumns += EncodingUtilHelper.quotate(descripcion) + ",";
-        strColumns += existencias + ",";
-        strColumns += precio;
-
-        return strColumns;
-    }
-
-    @Override
-    public String toPairs() {
-        String strPairs = "";
-        strPairs += "codigo=" + EncodingUtilHelper.quotate(codigo) + ",";
-        strPairs += "descripcion=" + EncodingUtilHelper.quotate(descripcion) + ",";
-        strPairs += "existencias=" + existencias + ",";
-        strPairs += "precio=" + precio;
-
-        return strPairs;
-    }
-
-    @Override
     public GenericBeanInterface fill(ResultSet oResultSet, Connection oConnection, UsuarioSpecificBeanImplementation oPuserBean_security, Integer expand) throws SQLException, Exception {
         this.setId(oResultSet.getInt("id"));
         this.setCodigo(oResultSet.getString("codigo"));

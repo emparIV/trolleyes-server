@@ -94,38 +94,6 @@ public class PedidoSpecificBeanImplementation extends TableGenericBeanImplementa
     }
     
     @Override
-    public String getColumns() {
-        String strColumns = "";
-        strColumns += "id,";
-        strColumns += "fecha,";
-        strColumns += "iva,";
-        strColumns += "tiene_iva,";
-        strColumns += "id_usuario";
-        return strColumns;
-    }
-    
-    @Override
-    public String getValues() {
-        String strColumns = "";
-        strColumns += id + ",";
-        strColumns += EncodingUtilHelper.stringifyAndQuotate(fecha) + ",";
-        strColumns += iva + ",";
-        strColumns += tiene_iva + ",";
-        strColumns += id_usuario;
-        return strColumns;
-    }
-    
-    @Override
-    public String toPairs() {
-        String strPairs = "";
-        strPairs += "fecha=" + EncodingUtilHelper.stringifyAndQuotate(fecha) + ",";
-        strPairs += "iva=" + iva + ",";
-        strPairs += "tiene_iva" + tiene_iva + ",";
-        strPairs += "id_usuario=" + id_usuario;
-        return strPairs;
-    }
-    
-    @Override
     public GenericBeanInterface fill(ResultSet oResultSet, Connection oConnection, UsuarioSpecificBeanImplementation oPuserBean_security, Integer expand) throws SQLException, Exception {
         this.setId(oResultSet.getInt("id"));
         this.setFecha(oResultSet.getDate("fecha"));
