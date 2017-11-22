@@ -113,28 +113,28 @@ public abstract class TableGenericBeanImplementation extends ViewGenericBeanImpl
         try {
             TableGenericBeanImplementation oBean = (TableGenericBeanImplementation) Class.forName(this.getClass().getName()).newInstance();
             Field[] oFields = oBean.getClass().getDeclaredFields();
-            for (Field x : oFields) {
-                x.setAccessible(true);
-                if (!x.getName().startsWith("obj_")) {
-                    if (x.getName().equals("password")) {
-                        strColumns += x.getName() + "=" + EncodingUtilHelper.quotate("da8ab09ab4889c6208116a675cad0b13e335943bd7fc418782d054b32fdfba04") + ",";
+            for (Field i : oFields) {
+                i.setAccessible(true);
+                if (!i.getName().startsWith("obj_")) {
+                    if (i.getName().equals("password")) {
+                        strColumns += i.getName() + "=" + EncodingUtilHelper.quotate("da8ab09ab4889c6208116a675cad0b13e335943bd7fc418782d054b32fdfba04") + ",";
                     } else {
-                        if (x.getType() == String.class) {
-                            strColumns += x.getName() + "=" + EncodingUtilHelper.quotate((String) x.get(this)) + ",";
+                        if (i.getType() == String.class) {
+                            strColumns += i.getName() + "=" + EncodingUtilHelper.quotate((String) i.get(this)) + ",";
                         }
-                        if (x.getType() == Date.class) {
-                            strColumns += x.getName() + "=" + EncodingUtilHelper.stringifyAndQuotate((Date) x.get(this)) + ",";
+                        if (i.getType() == Date.class) {
+                            strColumns += i.getName() + "=" + EncodingUtilHelper.stringifyAndQuotate((Date) i.get(this)) + ",";
                         }
-                        if (x.getType() == Integer.class) {
-                            strColumns += x.getName() + "=" + x.get(this) + ",";
+                        if (i.getType() == Integer.class) {
+                            strColumns += i.getName() + "=" + i.get(this) + ",";
                         }
-                        if (x.getType() == Double.class) {
-                            strColumns += x.getName() + "=" + x.get(this) + ",";
+                        if (i.getType() == Double.class) {
+                            strColumns += i.getName() + "=" + i.get(this) + ",";
                         }
                     }
 
                 }
-                x.setAccessible(false);
+                i.setAccessible(false);
             }
             if (!strColumns.equals("")) {
                 strColumns = strColumns.substring(0, strColumns.length() - 1);
